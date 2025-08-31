@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Modern Food App Color Palette */
+    --background: 20 14% 97%;
+    --foreground: 240 10% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 9%;
+
+    /* Primary - Deep Violet */
+    --primary: 258 86% 57%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 258 65% 85%;
+    --primary-glow: 258 86% 70%;
+
+    /* Secondary - Warm Neutral */
+    --secondary: 20 14% 92%;
+    --secondary-foreground: 240 10% 9%;
+
+    --muted: 20 14% 95%;
+    --muted-foreground: 240 5% 45%;
+
+    /* Accent - Emerald Green */
+    --accent: 138 76% 46%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 138 50% 85%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 14% 90%;
+    --input: 20 14% 95%;
+    --ring: 258 86% 57%;
+
+    --radius: 0.75rem;
+
+    /* Glass Effect Variables */
+    --glass-bg: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    
+    /* Beautiful Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(258 86% 57%), hsl(268 86% 67%));
+    --gradient-food: linear-gradient(135deg, hsl(138 76% 46%), hsl(148 76% 56%));
+    --gradient-glass: linear-gradient(135deg, hsla(258 86% 57% / 0.1), hsla(138 76% 46% / 0.1));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(258 86% 57% / 0.25);
+    --shadow-glow: 0 0 40px hsl(258 86% 57% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(240 10% 9% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 258 86% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 14% 95%;
+    --sidebar-accent-foreground: 240 10% 9%;
+    --sidebar-border: 20 14% 90%;
+    --sidebar-ring: 258 86% 57%;
+  }
+
+  .dark {
+    /* Dark Mode Food App */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - Lighter Violet for Dark Mode */
+    --primary: 258 86% 67%;
+    --primary-foreground: 240 10% 4%;
+    --primary-soft: 258 65% 25%;
+    --primary-glow: 258 86% 70%;
+
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 8% 12%;
+    --muted-foreground: 240 5% 55%;
+
+    /* Accent - Brighter Emerald for Dark */
+    --accent: 138 76% 56%;
+    --accent-foreground: 240 10% 4%;
+    --accent-soft: 138 50% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 8% 18%;
+    --input: 240 8% 12%;
+    --ring: 258 86% 67%;
+
+    /* Glass Effect for Dark Mode */
+    --glass-bg: 255 255 255 / 0.05;
+    --glass-border: 255 255 255 / 0.1;
+    
+    /* Dark Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(258 86% 67%), hsl(268 86% 77%));
+    --gradient-food: linear-gradient(135deg, hsl(138 76% 56%), hsl(148 76% 66%));
+    --gradient-glass: linear-gradient(135deg, hsla(258 86% 67% / 0.1), hsla(138 76% 56% / 0.1));
+    
+    /* Dark Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(258 86% 67% / 0.4);
+    --shadow-glow: 0 0 40px hsl(258 86% 67% / 0.5);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 240 8% 8%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 258 86% 67%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 8% 12%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 240 8% 18%;
+    --sidebar-ring: 258 86% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-card;
+  }
+  
+  .glass-card-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10 shadow-card;
+  }
+
+  /* Hero Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent;
+  }
+
+  /* Food Card Hover Effects */
+  .food-card-hover {
+    @apply transition-all duration-300 hover:shadow-soft hover:-translate-y-2 hover:scale-[1.02];
+  }
+
+  /* Animated Nutrition Bars */
+  .nutrition-bar {
+    @apply h-3 rounded-full overflow-hidden relative;
+  }
+  
+  .nutrition-fill {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+  }
+
+  /* Search Bar Glass Effect */
+  .search-glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/30 shadow-soft;
+  }
+}
