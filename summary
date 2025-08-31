@@ -1,0 +1,14 @@
+This is a full-stack project that combines a frontend built with React, Vite, Tailwind CSS, and the shadcn UI library, with a backend powered by Python. The project includes a set of UI components, a dataset (corpus.csv), and configuration files for ESLint and Bun.
+
+Main Function Points
+Provides a user-friendly interface for exploring and interacting with the project's features
+Includes a variety of UI components, such as cards, buttons, and navigation menus
+Utilizes TypeScript for type-safe development
+Leverages Tailwind CSS for efficient and customizable styling
+Integrates the shadcn UI library for a consistent and visually appealing user experience
+Technology Stack
+Frontend: React, Vite, Tailwind CSS, shadcn UI library
+Backend: Python
+Tooling: TypeScript, ESLint, Bun
+License
+This project is licensed under the MIT license.
